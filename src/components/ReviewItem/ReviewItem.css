@@ -1,0 +1,8 @@
+.review-item{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.review-head{
+    text-align: center;
+}
