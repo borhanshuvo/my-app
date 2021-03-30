@@ -5,16 +5,19 @@ import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import haapyImage from '../../images/giphy.gif';
 import './Review.css';
+import { useHistory } from 'react-router';
 
 
 const Review = () => {
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
+    const history = useHistory();
 
-    const placeOrder = () =>{
-        setCart([]);
-        setOrderPlaced(true);
-        processOrder();
+    const handelProceedCheckout = () =>{
+        history.push('/shipment');
+        // setCart([]);
+        // setOrderPlaced(true);
+        // processOrder();
     }
 
     const removeProduct = (productKey) => {
@@ -53,7 +56,7 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={cart}>
-                    <button onClick={placeOrder} className="btn-cart">Place Order</button>
+                    <button onClick={handelProceedCheckout} className="btn-cart">Proceed Checkout</button>
                 </Cart>
             </div>
         </div>
